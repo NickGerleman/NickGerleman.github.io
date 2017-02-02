@@ -166,6 +166,7 @@ nav h3 {
     border-radius: 5px;
     background-color: white;
     z-index: 2;
+    overflow: hidden;
 }
 
 .section-wrap {
@@ -177,25 +178,53 @@ nav h3 {
     flex-direction: column;
 }
 
-#education {
+#info {
     margin-top: 50px;
     background: url("img/crossword.png");
 }
 
-#education-card {
+#info-card {
     width: 900px;
     height: 500px;
     margin: 50px 0;
 }
 
-#education-sidebar {
+#info-sidebar {
     background-color: #f0f0f0;
     width: 300px;
     position: absolute;
     left: 0;
     height: 100%;
-    border-right: solid 1px #ddd;
-    border-radius: 5px 0 0 5px;
+    border-right: solid 1px #ccc;
+}
+
+#info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#info-list > li {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s, border-left 0.2s;
+    border-collapse: collapse;
+}
+
+#info-list > li:hover, #info-list > li.active:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: #333;
+}
+
+#info-list h3 {
+    margin: 0 20px;
+}
+
+#info-list > li.active {
+    border-left: 5px solid #206fd6;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 #experience-foreground {

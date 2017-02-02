@@ -5,6 +5,7 @@ let renderCallbacks = [];
 
 function main() {
     initNavbar();
+    initInfoPane();
 
     (function render() {
         renderCallbacks.forEach(fn => fn());
@@ -50,7 +51,7 @@ function onRender(callback) {
 
 function bindNavbarButtons() {
     let bindings = [
-        ['education-link',  'education'],
+        ['info-link',       'info'],
         ['experience-link', 'experience'],
         ['projects-link',   'projects']
     ];
@@ -64,22 +65,36 @@ function bindNavbarButtons() {
         document.addEventListener('scroll', () => checkActive(link, section));
 
         link.addEventListener('click', () => {
-            let scrollOffset = section.getBoundingClientRect().top - navbarHeight;
+            let sectionTop = section.getBoundingClientRect().top;
+            let marginTop = getComputedStyle(section).marginTop;
+            let scrollOffset = section.getBoundingClientRect().top - navbarHeight - parseInt(marginTop);
             scrollBy({
                 top: scrollOffset,
                 behavior: 'smooth'
             });
         });
     });
-
-
-    function checkActive(link, section) {
-        let rect = section.getBoundingClientRect();
-        let midHeight = window.innerHeight / 2;
-
-        if (rect.top < midHeight && rect.bottom >= midHeight)
-            link.classList.add('active');
-        else
-            link.classList.remove('active');
-    }
 }
+
+function checkActive(link, section) {
+    let rect = section.getBoundingClientRect();
+    let marginTop = parseInt(getComputedStyle(section).marginTop);
+    let midHeight = window.innerHeight / 2;
+
+    if (rect.top - marginTop < midHeight && rect.bottom >= midHeight)
+        link.classList.add('active');
+    else
+        link.classList.remove('active');
+}
+
+
+function initInfoPane() {
+        let infoLinks = document.querySelectorAll('#info-list li');
+
+        infoLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                infoLinks.forEach(link => link.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    }
