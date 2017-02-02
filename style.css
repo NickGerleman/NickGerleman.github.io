@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+body {
+    padding: 0;
+    margin: 0;
+    background: url("img/crossword.png");
+}
+
+h1, h2, h3, h4 {
+    font-family: Lato, sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h3 {
+    font-weight: 400;
+}
+
+#hero {
+    height: 500px;
+    background-color: #206fd6;
+    color: white;
+    position: relative;
+    min-height: 50vh;
+}
+
+#hero-info {
+    padding-top: 100px;
+}
+
+#name {
+    font-size: 64px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.nav-wrap {
+    width: calc(100vw - 200px);
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#name-nav {
+    transform: translateY(30px);
+    opacity: 0;
+    font-size: 30px;
+    line-height: 42px;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    transition: all 0.2s;
+}
+
+#name-nav.sticky {
+    transform: none;
+    opacity: 1;
+}
+
+#contact-info, #contact-info-nav {
+    margin-top: 40px;
+    transition: all 0.2s;
+    height: 24px;
+}
+
+#contact-info-nav {
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+#contact-info-nav.sticky {
+    transform: none;
+    opacity: 1;
+}
+
+#contact-info-nav, #contact-info.sticky {
+    right: 0;
+    margin: 0;
+    z-index: 1;
+    position: absolute;
+    top: 8px;
+}
+
+#contact-info > ul, #contact-info-nav > ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+#contact-info li, #contact-info-nav li {
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 100px;
+    margin: 0 3px;
+    transition: background-color 0.2s;
+}
+
+#contact-info li:hover, #contact-info-nav li:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#contact-info a, #contact-info-nav a {
+    color: white;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px;
+}
+
+nav {
+    background-color: #206fd6;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 42px;
+    z-index: 5;
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+}
+
+#nav-links {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 0;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    display: inline-block;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-link:hover, .nav-link.active:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.nav-link.active {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.nav-link:last-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+nav h3 {
+    margin: 0;
+}
+
+.content-card {
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background-color: white;
+    z-index: 2;
+}
+
+.section-wrap {
+    overflow: auto;
+    min-height: 51vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#education {
+    margin-top: 50px;
+    background: url("img/crossword.png");
+}
+
+#education-card {
+    width: 900px;
+    height: 500px;
+    margin: 50px 0;
+}
+
+#education-sidebar {
+    background-color: #f0f0f0;
+    width: 300px;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    border-right: solid 1px #ddd;
+    border-radius: 5px 0 0 5px;
+}
+
+#experience-foreground {
+    background-color: #f0f0f0;
+    width: 100%;
+    margin: 50px 0;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+}
+
+.exp-card {
+    height: 400px;
+    width: 300px;
+    margin: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.exp-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+}
+
+.exp-image {
+    margin-top: 30px;
+    max-height: 100%;
+    max-width: 70%;
+}
+
+#projects {
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 50px auto;
+    max-width: 1500px;
+}
+
+.project-card {
+    height: 300px;
+    width: 400px;
+    margin: 20px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.project-card > h1 {
+    font-size: 48px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    margin: 0;
+    line-height: 300px;
+    text-shadow: 1px 1px black;
+}
+
+.project-card:hover {
+    cursor: pointer;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: blur(8px);
+    transition: all 0.5s;
+    background-position: center;
+}
+
+.project-card:hover .project-img {
+    filter: none;
+}
+
+.project-vignette {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    transition: all 0.5s;
+}
+
+.project-card:hover .project-vignette {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#p1 {
+    background-image: url("img/p1.png");
+}
+
+#p2 {
+    background-image: url("img/p2.png");
+}
+
+#p3 {
+    background-image: url("img/p3.png");
+}
+
+#p4 {
+    background-image: url("img/p4.png");
+}
+
+#p5 {
+    background-image: url("img/p5.png");
+}
+
+#p6 {
+    background-image: url("img/p6.png");
+}
