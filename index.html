@@ -109,6 +109,7 @@ would just be super impressed.
                     <li class="active"><h3>General</h3></li>
                     <li><h3>Education</h3></li>
                     <li><h3>Awards</h3></li>
+                    <li><h3>Open Source</h3></li>
                 </ul>
             </div>
         </div>
@@ -139,37 +140,325 @@ would just be super impressed.
     </section>
 
     <section id="projects" class="section-wrap">
-        <div class="content-card project-card">
+
+        <div class="content-card project-card" id="fluffify-card">
             <h1>Fluffify</h1>
-            <div class="project-img" id="p1"></div>
+            <div class="project-img" id="fluffify-thumb"></div>
             <div class="project-vignette"></div>
         </div>
-        <div class="content-card project-card">
-            <h1>Alisa</h1>
-            <div class="project-img" id="p2"></div>
-            <div class="project-vignette"></div>
-        </div>
-        <div class="content-card project-card">
+
+        <div class="content-card project-card" id="stalkr-card">
             <h1>Stalkr</h1>
-            <div class="project-img" id="p3"></div>
+            <div class="project-img" id="stalkr-thumb"></div>
             <div class="project-vignette"></div>
         </div>
-        <div class="content-card project-card">
+
+        <div class="content-card project-card" id="taa-card">
+            <h1>Temporal AA</h1>
+            <div class="project-img" id="taa-thumb"></div>
+            <div class="project-vignette"></div>
+        </div>
+
+        <div class="content-card project-card" id="pantri-card">
+            <h1>Pantri</h1>
+            <div class="project-img" id="pantri-thumb"></div>
+            <div class="project-vignette"></div>
+        </div>
+
+        <div class="content-card project-card" id="nimbus-card">
             <h1>Nimbus</h1>
-            <div class="project-img" id="p4"></div>
+            <div class="project-img" id="nimbus-thumb"></div>
             <div class="project-vignette"></div>
         </div>
-        <div class="content-card project-card">
+
+        <div class="content-card project-card" id="beacon-card">
             <h1>Beacon</h1>
-            <div class="project-img" id="p5"></div>
+            <div class="project-img" id="beacon-thumb"></div>
             <div class="project-vignette"></div>
         </div>
-        <div class="content-card project-card">
+
+        <div class="content-card project-card" id="alisa-card">
+            <h1>Alisa</h1>
+            <div class="project-img" id="alisa-thumb"></div>
+            <div class="project-vignette"></div>
+        </div>
+
+        <div class="content-card project-card" id="socal-card">
             <h1>SoCal</h1>
-            <div class="project-img" id="p6"></div>
+            <div class="project-img" id="socal-thumb"></div>
             <div class="project-vignette"></div>
         </div>
+
+        <div class="project-card-fill"></div>
+        <div class="project-card-fill"></div>
+
     </section>
 
+    <div id="expanded-project-wrap">
+
+        <div class="expanded-project" id="fluffify">
+            <div class="project-content">
+                <div class="project-description">
+                    <h1>Fluffify</h1>
+                    <h2>Engineering the Perfect Cat Collage</h2>
+
+                    <p>
+                        Fluffify was a 36 hour project created for HackISU Spring 2016. I led overall design of the
+                        system. The goal of the project was to let a user create a massive collage of cute animal
+                        projects from an arbitrary image.
+                    </p>
+
+                    <p>
+                        This was accomplished by first scraping a few thousand cute animal pictures using the imgur API.
+                        The scraped images were intelligently cropped using OpenCV to choose the square image with the
+                        most edges. The average color of each image is then recorded.
+                    </p>
+
+                    <p>
+                        All of these images are then indexed into a KD tree where the color is represented as a point in
+                        LAB color space. The collage is constructed by taking each pixel in the uploaded image and then
+                        querying the KD tree for a similar image.
+                    </p>
+
+                </div>
+                <div class="project-media">
+                    <iframe width="360" height="248" src="https://www.youtube.com/embed/peRppPjIa7I" frameborder="0" allowfullscreen></iframe>
+                    <img src="img/fluffify/1.png" alt="Screenshot 1" width="360" height="207">
+                </div>
+            </div>
+        </div>
+
+        <div class="expanded-project" id="stalkr">
+            <div class="project-content">
+                <div class="project-description">
+                    <h1>Stalkr</h1>
+                    <h2>A Harrowing Proof of Concept</h2>
+
+                    <p>
+                        Stalkr was a 36 hour hackathon project created for HackISU Fall 2014 where it won first place. I
+                        was responsible for the backend service. Stalkr is a proof of concept meant to illustrate a
+                        serious vulnerability in the Grindr dating service.
+                    </p>
+
+                    <p>
+                        A previous exploit showed it to be possible to track Grindr users through a process called
+                        trilateration. While Grindr had stated this was resolved, we were curious if it actually was. We
+                        wanted to see how much data could be obtained and to what precision we could track users.
+                    </p>
+
+                    <p>
+                        We first reverse-engineered the Grindr API. We then created a fake user who would rapidly move
+                        and record user distances. This data was used to gues the user;s location. We were effectively
+                        able to track users movements throughout the day within a block of accuracy.
+                    </p>
+
+                </div>
+                <div class="project-media">
+                    <img src="img/stalkr/1.png" alt="Screenshot 1" width="360" height="207">
+                    <img src="img/stalkr/2.png" alt="Screenshot 2" width="360" height="207">
+                </div>
+            </div>
+        </div>
+
+        <div class="expanded-project" id="taa">
+            <div class="project-content">
+                <div class="project-description">
+                    <h1>Temporal Antialiasing</h1>
+                    <h2>Fast and Gorgeous</h2>
+
+                    <p>
+                        This is a from-scratch implementation of Temporal Antialiasing built upon Three.js. This was
+                        done during Fall 2016 for my final project in ComS 336: Introduction to Computer Graphics. This
+                        implementation is relatively sophisticated, based on the presentations put out by Naughty Dog
+                        and Unreal.
+                    </p>
+
+                    <p>
+                        Each frame is given a small jitter and composited with the previous in order to apply
+                        supersampling over a period of multiple frames. Per object motion is recorded in between frames
+                        in order to compensate for movement that may blur the result. Special techniques are used to
+                        eliminate artifacts such as ghosting and flickering.
+                    </p>
+
+                    <p>
+                        The end result is largely effective. It is able to achieve a dramatic improvement upon standard
+                        MSAA while performing about 300% faster than SSAA.
+                    </p>
+
+
+                </div>
+                <div class="project-media">
+                    <iframe width="360" height="224" src="https://www.youtube.com/embed/zPVJF_TscOQ" frameborder="0" allowfullscreen></iframe>
+                    <img src="img/taa/1.png" alt="Screenshot 1" width="360" height="207">
+                </div>
+            </div>
+        </div>
+
+        <div class="expanded-project" id="pantri">
+            <div class="project-content">
+                <div class="project-description">
+                    <h1>Pantri</h1>
+                    <h2>Ingredients made easy</h2>
+
+                    <p>
+                        Pantri was a 36 hour hackathon project created for HackISU Fall 2016 where it won third place.
+                        Pantri allows users to quickly manage ingredients they own and find recipes that can use them.
+                        I was responsible for recipe search, ingredient classification, and parts of the Android UI.
+                    </p>
+
+                    <p>
+                        Pantri works by the user entering or scanning ingredients. Heuristics are used to classify
+                        an ingredient by name using inverse term frequency. This technique was used to create a forest
+                        of several thousand ingredients including a hierarchy.
+                    </p>
+
+                    <p>
+                        Recipes were scraped from AllRecipes.com and ingredients were classified by listed name. The
+                        user is able to see a randomized list of top recipes that were identified to be able to be
+                        created with the ingredients the user already has.
+                    </p>
+
+                </div>
+                <div class="project-media horizontal">
+                    <img src="img/pantri/1.png" alt="Screenshot 1" width="135" height="240">
+                    <img src="img/pantri/2.png" alt="Screenshot 2" width="135" height="240">
+                    <img src="img/pantri/3.png" alt="Screenshot 3" width="135" height="240">
+                    <img src="img/pantri/4.png" alt="Screenshot 4" width="135" height="240">
+                </div>
+            </div>
+        </div>
+
+        <div class="expanded-project" id="nimbus">
+            <div class="project-content">
+                <div class="project-description">
+                    <h1>Nimbus</h1>
+                    <h2>Aggregating Your Online Life</h2>
+
+                    <p>
+                        Nimbus was my first foray into web development, created mainly during the Summer of 2013. The
+                        goal of Nimbus was to allow users to aggregate multiple cloud storage accounts from different
+                        providers into a single view.
+                    </p>
+
+                    <p>
+                        Ruby on Rails and CoffeeScript were used during development. The backend was mainly responsible
+                        for user authentication, OAuth management, and serving static content. The frontend uses this
+                        information to query the APIs of the cloud providers to show files.
+                    </p>
+
+                    <p>
+                        Nimbus supported a wide set of features such as image preview, reCAPTCHA based registration
+                        checks, push state based navigation, secure email based password reset, and responsive design.
+                    </p>
+
+                </div>
+                <div class="project-media">
+                    <img src="img/nimbus/1.png" alt="Screenshot 1" width="360" height="207">
+                    <img src="img/nimbus/2.png" alt="Screenshot 2" width="360" height="207">
+                </div>
+            </div>
+        </div>
+
+        <div class="expanded-project" id="beacon">
+            <div class="project-content">
+                <div class="project-description">
+                    <h1>Beacon</h1>
+                    <h2>Location Relevant Messaging</h2>
+
+                    <p>
+                        Beacon was a 36 hour hackathon project created for HackISU Fall 2015. I created the backend
+                        service for the project as well as the majority of the Android user interface. The goal of
+                        Beacon was to allow users to find location relevant messages.
+                    </p>
+
+                    <p>
+                        The core idea of Beacon is that users could create a message only viewable within a given
+                        radius. Viewed messages are ranked according to several metrics such as the size of the radius,
+                        the age of the message, and message krama. Messages are additionally given a set lifespan.
+                    </p>
+
+                    <p>
+                        Use cases for Beacon include large events such as hackathons or commentary for small
+                        gatherings such as a lecture.
+                    </p>
+
+                </div>
+                <div class="project-media horizontal">
+                    <img src="img/beacon/1.png" alt="Screenshot 1" width="135" height="240">
+                    <img src="img/beacon/2.png" alt="Screenshot 2" width="135" height="240">
+                    <img src="img/beacon/3.png" alt="Screenshot 3" width="135" height="240">
+                    <img src="img/beacon/4.png" alt="Screenshot 4" width="135" height="240">
+                </div>
+            </div>
+        </div>
+
+        <div class="expanded-project" id="alisa">
+            <div class="project-content">
+                <div class="project-description">
+                    <h1>Alisa</h1>
+                    <h2>A Modern Day Turing Test</h2>
+
+                    <p>
+                        Alisa was a 36 hour hackathon project created for HackISU Spring 2015. The core idea of Alisa
+                        was to perform a mass Turing Test on users by connecting Tinder users to the non-malicious
+                        Cleverbot. For this project I worked both on the backend service and fronted client for the
+                        application.
+                    </p>
+
+                    <p>
+                        Our profile would automatically like any users in a given area before moving on to the next
+                        area. If one hasn't been started yet it will start a conversation with the other user. All
+                        messages were stored and displayed in real-time in the web application.
+                    </p>
+
+                    <p>
+                        This project presented several engineering challenges. We needed to reverse engineer the Tinder
+                        API using Burp Suite. Implementing efficient realtime notifications was also a challenge.
+                    </p>
+
+                </div>
+                <div class="project-media">
+                    <img src="img/alisa/1.png" alt="Screenshot 1" width="360" height="207">
+                    <img src="img/alisa/2.png" alt="Screenshot 2" width="360" height="207">
+                </div>
+            </div>
+        </div>
+
+        <div class="expanded-project" id="socal">
+            <div class="project-content">
+                <div class="project-description">
+                    <h1>SoCal</h1>
+                    <h2>Calendaring Made Social</h2>
+
+                    <p>
+                        SoCal was created as a semester long group project during Spring 2014. I was responsible for
+                        developing the backend service for the application. SoCal was designed to be a social calendar.
+                    </p>
+
+                    <p>
+                        SoCal let users add others as friends and view their calendars. Users could create multiple
+                        calendars shared with other users. Users could choose their mode of transportation and get
+                        reminders at the time they needed to leave based on their location. Recurring events could be
+                        created.
+                    </p>
+
+                    <p>
+                        The backend had several responsibilities. It had to keep user credentials and manage OAuth. It
+                        had to maintain a graph of user friends and privacy settings for each. It needed to manage push
+                        notifications to alert users of changes to a friend's calendar.
+                    </p>
+
+
+                </div>
+                <div class="project-media horizontal">
+                    <img src="img/socal/1.png" alt="Screenshot 1" width="135" height="240">
+                    <img src="img/socal/2.png" alt="Screenshot 2" width="135" height="240">
+                    <img src="img/socal/3.png" alt="Screenshot 3" width="135" height="240">
+                    <img src="img/socal/4.png" alt="Screenshot 4" width="135" height="240">
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
