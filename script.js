@@ -99,12 +99,20 @@ function checkActive(link, section) {
 
 
 function initInfoPane() {
-    let infoLinks = document.querySelectorAll('#info-list li');
+    let bindings = [
+        ['general-info-link',   'general-info'],
+        ['education-info-link', 'education-info']
+    ];
 
-    infoLinks.forEach(link => {
+    bindings.forEach(binding => {
+        let link = document.getElementById(binding[0]);
+        let content = document.getElementById(binding[1]);
+
         link.addEventListener('click', () => {
-            infoLinks.forEach(link => link.classList.remove('active'));
+            document.querySelector('.info-link.active').classList.remove('active');
             link.classList.add('active');
+            document.querySelector('.info-content.active').classList.remove('active');
+            content.classList.add('active');
         });
     });
 }

@@ -93,7 +93,7 @@ would just be super impressed.
                             <a href="https://medium.com/@nickgerleman/">
                                 <i class="fa fa-medium"></i>
                             </a>
-                        </li>
+                        </li> 
 
                     </ul>
                 </div>
@@ -106,13 +106,14 @@ would just be super impressed.
         <div id="info-card" class="content-card">
             <div id="info-sidebar">
                 <ul id="info-list">
-                    <li class="active"><h3>General</h3></li>
-                    <li><h3>Education</h3></li>
-                    <li><h3>Awards</h3></li>
-                    <li><h3>Open Source</h3></li>
+                    <li class="active info-link" id="general-info-link"><h3>General</h3></li>
+                    <li class="info-link" id="education-info-link"><h3>Electives</h3></li>
+                    <li class="info-link" id="award-info-link"><h3>Awards</h3></li>
+                    <li class="info-link" id="oss-info-link"><h3>Open Source</h3></li>
                 </ul>
             </div>
-            <div id="info-content">
+            
+            <div id="general-info" class="info-content active">
                 <p>
                     My experience at Iowa State University has prepared me to design
                     large systems and related problems. Courses have challeneged me in a
@@ -137,6 +138,49 @@ would just be super impressed.
                     of knowledge and allow me to solve more unique problems.
                 </p>
             </div>
+
+            <div id="education-info" class="info-content">
+                <h2>CprE 419: Tools for Large Scale Data Analysis</h2>
+                <p>
+                    Platforms and tooling for analysis of "Big Data" such as
+                    Hadoop, MapReduce, Pig, and Spark. Both implementation and
+                    usage details of the platforms were covered. Real world
+                    examples such as graph processing and financial analysis
+                    were taught. <span class="bullshit">This is useful to
+                    devlop methods to understand the increasing amount of data
+                    in our everyday lives.</span>
+                </p>
+
+                <h2>ComS 435: Algorithms for Large Data Sets</h2>
+                <p>
+                    Unique algorithms and data structures used for "Big Data".
+                    Topics included probabilistic data structures, document
+                    clustering, and efficient information retrieval.
+                    <span class="bullshit">This course expanded my ability to
+                    search for complex solutions to seemingly impossible
+                    problems.</span>
+                </p>
+
+                <h2>ComS 336: Introduction to Computer Graphics</h2>
+                <p>
+                    Introduction to theoretical and practical aspects of
+                    Computer Graphics. Topics included the graphics pipeline,
+                    view and persepctive transformations, object hierarchies,
+                    shaders, and lighting. <span class="bullshit">This course
+                    helped in concept visualization.</span>
+                </p>
+
+                <h2>ComS 342: Principles of Programming Languages</h2>
+                <p>
+                    Theory and practice behind lexing, parsing, and functional
+                    programming. The core of the course involves creating an
+                    interpreter for a scheme based language implemented in
+                    Racket. <span class="bullshit">This course helped me to
+                    adapt my thinking into new paradigms.</span>
+                </p>
+
+            </div>
+
         </div>
     </section>
 
@@ -294,7 +338,8 @@ would just be super impressed.
                     <p>
                         Stalkr was a 36 hour hackathon project created for HackISU Fall 2014 where it won first place. I
                         was responsible for the backend service. Stalkr is a proof of concept meant to illustrate a
-                        serious vulnerability in the Grindr dating service.
+                        serious vulnerability in the Grindr dating service. Stalkr shows the importance of location as
+                        personally identifiable information and the importance of information safety among targeted groups.
                     </p>
 
                     <p>
@@ -361,6 +406,7 @@ would just be super impressed.
                         Pantri was a 36 hour hackathon project created for HackISU Fall 2016 where it won third place.
                         Pantri allows users to quickly manage ingredients they own and find recipes that can use them.
                         I was responsible for recipe search, ingredient classification, and parts of the Android UI.
+                        <span class="bullshit">Pantri allows busy people to have more time to do the things they love.</span>
                     </p>
 
                     <p>
@@ -426,6 +472,7 @@ would just be super impressed.
                         Beacon was a 36 hour hackathon project created for HackISU Fall 2015. I created the backend
                         service for the project as well as the majority of the Android user interface. The goal of
                         Beacon was to allow users to find location relevant messages.
+                        <span class="bullshit">Beacons introduces a new way to obtain information and communicate.</span>
                     </p>
 
                     <p>
@@ -460,6 +507,7 @@ would just be super impressed.
                         was to perform a mass Turing Test on users by connecting Tinder users to the non-malicious
                         Cleverbot. For this project I worked both on the backend service and fronted client for the
                         application.
+                        <span class="bullshit">Alisa shows interesting aspects of how people interact in a digital world.</span>
                     </p>
 
                     <p>

@@ -193,8 +193,8 @@ nav h3 {
 }
 
 #info-card {
-    width: 900px;
-    height: 500px;
+    width: 950px;
+    height: 550px;
     margin: 50px 0;
     display: flex;
 }
@@ -235,9 +235,34 @@ nav h3 {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-#info-content {
+.info-content {
     padding: 20px 50px;
+    position: absolute;
+    left: 300px;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
 }
+
+.info-content.active {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.info-content h2 {
+    margin-bottom: 0;
+}
+
+.info-content h2 {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.info-content h2 + p {
+    margin-top: 4px;
+}
+
 
 #experience-foreground {
     background: url("img/denim.png");
@@ -498,8 +523,8 @@ nav h3 {
 }
 
 .project-content h2 {
-    margin-top: 0;
     font-size: 16px;
     color: #555;
+    margin-top: 0;
     margin-bottom: 30px;
 }
