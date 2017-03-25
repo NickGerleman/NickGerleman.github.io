@@ -101,6 +101,7 @@ function checkActive(link, section) {
 function initInfoPane() {
     let bindings = [
         ['general-info-link',   'general-info'],
+        ['goal-info-link',      'goal-info'],
         ['education-info-link', 'education-info']
     ];
 
