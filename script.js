@@ -102,7 +102,9 @@ function initInfoPane() {
     let bindings = [
         ['general-info-link',   'general-info'],
         ['goal-info-link',      'goal-info'],
-        ['education-info-link', 'education-info']
+        ['elective-info-link',  'elective-info'],
+        ['award-info-link',     'award-info'],
+        ['oss-info-link',       'oss-info']
     ];
 
     bindings.forEach(binding => {
@@ -124,6 +126,7 @@ function initProjectCards() {
     let bindings = [
         ['fluffify-card', 'fluffify'],
         ['stalkr-card',   'stalkr'],
+        ['reds-card',     'reds'],
         ['taa-card',      'taa'],
         ['pantri-card',   'pantri'],
         ['nimbus-card',   'nimbus'],

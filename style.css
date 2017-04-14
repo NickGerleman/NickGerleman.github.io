@@ -406,16 +406,20 @@ nav h3 {
     background-image: url("img/fluffify/thumb.png");
 }
 
+#stalkr-thumb {
+    background-image: url("img/stalkr/thumb.png");
+}
+
+#reds-thumb {
+    background-image: url("img/reds/thumb.png");
+}
+
 #taa-thumb {
     background-image: url("img/taa/thumb.png");
 }
 
 #pantri-thumb {
     background-image: url("img/pantri/thumb.png");
-}
-
-#stalkr-thumb {
-    background-image: url("img/stalkr/thumb.png");
 }
 
 #nimbus-thumb {
